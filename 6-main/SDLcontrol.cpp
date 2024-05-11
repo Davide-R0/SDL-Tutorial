@@ -1,5 +1,5 @@
 #include "SDLcontrol.h"
-#include <SDL2/SDL_render.h>
+//#include <SDL2/SDL_render.h>
 
 bool init_w_r ( SDL_Window** gWindow, SDL_Renderer** gRenderer) {
     //Initialize SDL
@@ -9,7 +9,7 @@ bool init_w_r ( SDL_Window** gWindow, SDL_Renderer** gRenderer) {
     }
     
     //Window Creation 
-    *gWindow = SDL_CreateWindow( "Window Title", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
+    *gWindow = SDL_CreateWindow( "Window Title", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
         
     if( *gWindow == NULL ) {
         printf( "Window not created! SDL_Error: %s\n", SDL_GetError() );
@@ -17,7 +17,7 @@ bool init_w_r ( SDL_Window** gWindow, SDL_Renderer** gRenderer) {
     }
     
     //Create renderer for window
-    *gRenderer = SDL_CreateRenderer( *gWindow, -1, SDL_RENDERER_ACCELERATED );
+    *gRenderer = SDL_CreateRenderer( *gWindow, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC );
     
     if( gRenderer == NULL ){
         printf( "Renderer could not be created! SDL Error: %s\n", SDL_GetError() );

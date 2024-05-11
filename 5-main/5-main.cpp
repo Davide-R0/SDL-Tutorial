@@ -54,13 +54,12 @@ int main( int argc, char* args[] ) {
      
     while( !quit ) { 
         while( SDL_PollEvent( &eventSDL ) ) { 
-            
             // ...
-            
             if( eventSDL.type == SDL_QUIT ) quit = true; 
         }
 
         //Clear screen
+        SDL_SetRenderDrawColor( renderer, 0xFF, 0xFF, 0xFF, 0xFF );
         SDL_RenderClear( renderer );
 
         //Render texture to screen
@@ -68,7 +67,22 @@ int main( int argc, char* args[] ) {
 
         //Update screen
         SDL_RenderPresent( renderer );  //similar to UpdateWindowSurface
+        
+        //return time per frame
+        //double = time;
+        //double = delta;
+        //delta = time - SDL_GetPerformanceCounter();    
+        //time = SDL_GetPerformanceCounter();
+        //or use chrono cpp
+        //#include <chrono>
+        //...
+
+        //Delay in rendering (ms)
+        //In case of hight cpu and gpu usage, better set freesync in the renderer initialization
+        //SDL_Delay(5);
     } 
+    
+
 
     clear_w_s( &window, &renderer, &texture );
 

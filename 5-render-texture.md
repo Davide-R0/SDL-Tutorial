@@ -15,5 +15,10 @@ The tecxture are a more efficient and newest version of surface.
 
 - See the example...
 
+- In case of hight cpu and GPU usage activate freesync in the renderer creation:
+    ``` cpp
+    renderer = SDL_CreateRenderer( window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC );
+    ```
+
 ## Conclusion
 Source code [5-image](5-image/)
