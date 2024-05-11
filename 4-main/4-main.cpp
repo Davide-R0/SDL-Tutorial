@@ -39,9 +39,6 @@ int main( int argc, char* args[] ) {
         return EXIT_FAILURE;
     }
 
-    // Update window sourface
-    SDL_UpdateWindowSurface( window );
-    
     // To get window active and Render loop
     SDL_Event eventSDL; 
     bool quit = false; 

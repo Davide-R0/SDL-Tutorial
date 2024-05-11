@@ -1,5 +1,4 @@
 # Event Handler
-## Render Loop
 In `main`:
 ``` cpp
 // To get window active and Render loop
@@ -23,7 +22,6 @@ In `main`:
         SDL_UpdateWindowSurface( window );
     }
 ```
-- `SDL_PollEvent()`
 
 ## Conclusion
 Source file [3 main](3-main/)
