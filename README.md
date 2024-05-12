@@ -17,3 +17,9 @@
 ## Userfull information:
 - For timing in render loop use: `std::chrono`, `SDL_GetPerformanceFrequency();` or `SDL_GetPerformanceCounter();`.
 - If the cpu and gpu usage are hight insert a delay in the render loop `SDL_Delay(1);` or activate `freesync` in the renderer.
+
+---
+
+# More resources:
+- [SDL Tutorials](https://wiki.libsdl.org/SDL2/Tutorials)
+- [LazyFoo SDL Tutorial](https://lazyfoo.net/tutorials/SDL/index.php)

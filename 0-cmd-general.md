@@ -44,3 +44,6 @@ CFLAGS = -Wall -g -O2
 - `-w`      suppress compiler warnings
 - `-O2`     standard optimization
 - `-c`      Compiler source(s) to object-code (input to linker). This option is better for incremental compilation when using multiple files.
+
+## To rederect a renderer to a texture:
+[Renderer to Texture](https://wiki.libsdl.org/SDL2/SDL_SetRenderTarget)

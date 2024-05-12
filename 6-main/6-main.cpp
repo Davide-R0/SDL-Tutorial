@@ -56,13 +56,23 @@ int main( int argc, char* args[] ) {
         SDL_SetRenderDrawColor( renderer, 0x00, 0x00, 0xFF, 0xFF );        
         SDL_RenderDrawLine( renderer, 0, SCREEN_HEIGHT / 2, SCREEN_WIDTH, SCREEN_HEIGHT / 2 );
         
-        //Draw yellow obliqual line with width of 3px
+        //Draw black obliqual line with width of 3px
         SDL_SetRenderDrawColor( renderer, 0x00, 0x00, 0x00, 0xFF );
+        SDL_Point points[SCREEN_HEIGHT];
+
         for( int i = 0; i < SCREEN_HEIGHT; i++ ) {
-            SDL_RenderDrawPoint( renderer, i, i+1 );
-            SDL_RenderDrawPoint( renderer, i, i );
-            SDL_RenderDrawPoint( renderer, i+1, i );
+            points[i] = {i, i};
+
+            //SDL_RenderDrawPoint( renderer, i, i+1 );
+            //SDL_RenderDrawPoint( renderer, i, i );
+            //SDL_RenderDrawPoint( renderer, i+1, i );
+
+            // for multiple pixels drawings:
+            // int SDL_RenderDrawPoints(SDL_Renderer * renderer, const SDL_Point * points, int count); 
+            // with an array of SDL_Point
         }
+
+        SDL_RenderDrawPoints( renderer, points, SCREEN_HEIGHT);
 
         //Update screen
         SDL_RenderPresent( renderer );
